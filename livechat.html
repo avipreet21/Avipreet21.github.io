@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #222; /* Dark background color */
+            color: #fff; /* White text color */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .messages {
+            background-color: #333; /* Darker background color for messages */
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .chatbox {
+            background-color: #333; /* Darker background color for chatbox */
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        .inbox {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;
+            background-color: #444; /* Darker background color for input fields */
+            color: #fff; /* White text color */
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script src="livechatfunc.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="messages">
+            <!-- Messages will be displayed here -->
+        </div>
+        <div class="chatbox">
+            <div class="inbox">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter your name">
+            </div>
+            <div class="inbox">
+                <label for="Text">Message:</label>
+                <textarea id="Text" rows="5" maxlength="500" placeholder="Type your message here"></textarea>
+            </div>
+            <button id="submitButton">Submit</button>
+        </div>
+    </div>
+</body>
+</html>
