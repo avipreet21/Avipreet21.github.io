@@ -1,15 +1,32 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const dataContainer = document.querySelector('.messages'); // Added dataContainer initialization
     displaymessages();
     const button = document.getElementById("submitButton");
-    button.addEventListener('click', handleSubmitAndDisplayMessages);
+    button.addEventListener('click', submitForm);
+    const databaseRef = new EventSource('https://learning-datbase-default-rtdb.firebaseio.com/Achat.json');
+    databaseRef.addEventListener('put', async (event) => {
+        try {
+            const newData = JSON.parse(event.data);
+            const messageData = newData.data;
+            if (messageData.name && messageData.feedback) { // Check if both fields are filled
+                dataContainer.innerHTML += `
+                    <p><u><strong>Name:</strong> ${messageData.name}</u>
+                    <strong>Message:</strong> ${messageData.feedback}</p>
+                    `;
+            }
+        } catch (error) {
+            console.error('Error handling real-time update:', error);
+        }
+    });
+    
 });
 
 async function displaymessages() {
-    const message = document.getElementsByClassName("messages")[0]; // Get the first element with class "messages"
+    const message = document.querySelector('.messages'); // Changed getElementsByClassName to querySelector
     try {
         let response = await fetch('https://learning-datbase-default-rtdb.firebaseio.com/Achat.json');
         const text = await response.json();
-        message.innerHTML =""
+        message.innerHTML = "";
         let messages_arr = [];
         let name_arr = [];
         for (const key in text) {
@@ -56,9 +73,4 @@ async function submitForm(){
     }else{
         alert('Please fill all fields')
     }
-}
-
-async function handleSubmitAndDisplayMessages() {
-    await submitForm();
-    displaymessages();
 }
