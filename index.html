@@ -1,85 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avipreet Singh's Eportfolio</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Avipreet Singh's Eportfolio</title>
 
-<body>
+        <link rel="stylesheet" href="index-style.css" />
+        <script src="index.js"></script>
+    </head>
 
-    <header>
-        <h1>Introduction</h1>
-        <p>Hello, I'm Avipreet Singh, a science student at Capilano University in my second year. My journey here has been remarkable, thanks to the wonderful professors and engaging experiences. Fueled by a passion for computer science, I eagerly enrolled in Comp165, dedicating myself to mastering the subject and indulging in coding whenever possible. I'm excited about the prospect of learning and growing through this course.</p>
-    </header>
-    <section>
-        <h3>COMP165 labs</h3>
-        <ol>
-            <li><a href ="count_up_down.html" >lab3</a></li>
-            <li><a href = "calculator.html">lab4</a></li>
-            <li><a href ="weather.html">lab5</a></li>
-            <li><a href ="database.html">lab6</a></li>
-            <li><a href ="livechat.html">lab6(part2)</a></li>
+    <body>
 
-        </ol>
+        <header class="header">
+            <div class="header_logo">
+                <div class="header_logo_img">
+                    <img src= img\av_logo.jpg/>
+                </div>
+                <a class ="header_logo_img_sub" href ="index.html">Avipreet Singh</a>
+            </div>
+            <div class="header_main_menu">
+                <ul class="main_menu_links">
+                    <li class="main_menu_link-wrapper">
+                        <a href ="index.html" class="header_link">HOME</a>
+                    </li>
+                    <li class="main_menu_link-wrapper">
+                        <a href="index.html#about" class="header_link">ABOUT</a>
+                    </li>
+                    <li class="main_menu_link-wrapper">
+                        <a href="index.html#projects" class="header_link">PROJECTS</a>
+                    </li>
+                    <li class="main_menu_link-wrapper">
+                        <a href="index.html#contact" class="header_link">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section class="Introduction">
+            <div class="Introduction_content">
+                <h1 class ="annoucing_name">HEY, I AM AVIPREET SINGH</h1>
+                <div class = "Name_info">
+                    <p class="first-impression">
+                        A dedicated student at Capilano University, fueled by a deep passion for coding, relentlessly pursues their journey of learning and mastering the art of programming within the academic environment.
+                    </p>
+                </div>
+                <div class="Name_projects">
+                    <a href="#projects" class="button_green">PROJECTS</a>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="secondary_introduction">
+            <div class = "main_container">
+                <h2 class ="heading_container_about">
+                    <span class ="heading_title">ABOUT ME</span>
+                    <span class ="heading_content">Here, you'll find more information about me, including my technical skills and interests.</span>
+                </h2>
+                <div class="about_content_and_skills">
+                    <div class="about_content">
+                        <div class="about_content_detail">
+                            <h3 class="about_content-title">Get to know me!</h3>
+                            <p class ="about_content_detail_para">
+                                I am currently based in <strong>Vancouver</strong>, where I have been immersed in a wealth of learning experiences at <strong>Capilano University</strong>. Graduating with an <strong>associate degree</strong>, I have had the invaluable opportunity to expand my knowledge and skills across various domains. Through engaging in <strong>hands-on projects</strong>, I've delved into fascinating areas of study, making each step of this journey incredibly fulfilling. As I reflect on this remarkable chapter, I'm excited to see where this <strong>journey</strong> will lead me next.
+                            </p>
+                            <p class ="about_content_detail_para">
+                                I'm a guy who enjoys hanging out with friends, exploring BC's beautiful landscapes, and diving into offroading adventures. Whether it's a spontaneous road trip or hitting the trails, I love the thrill of outdoor exploration with great company.Feel free to <strong>contact</strong> me here.
+                            </p>
 
-    </section>
-    <section>
-        <h2>What I Love to Do</h2>
-        <ul>
-            <li>Exploring new places is my favorite pastime, and I make it a point to travel during semester breaks.</li>
-            <li>Enjoying quality time with friends is something I always look forward to.</li>
-            <li>Engaging in sports, particularly badminton, and occasional workouts keep me active.</li>
-        </ul>
-    </section>
+                            <a href ="#contact" class="button_green">Contact</a>
+                        </div>
+                    </div>
+                    <div class ="about_skills">
+                        <h3 class="about_skills_title">My skills</h3>
+                        <div class ="skills">
+                            <div class="each_skill">Python Programming</div>
+                            <div class="each_skill">Computational Modeling</div>
+                            <div class="each_skill">Data Visualization</div>
+                            <div class="each_skill">Data Analysis</div>
+                            <div class="each_skill">Microsoft PowerPoint</div>
+                            <div class="each_skill">HTML Development</div>
+                            <div class="each_skill">JavaScript Programming</div>
+                            <div class="each_skill">Robotics Coding</div>
+                            <div class="each_skill">C/C++</div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </section>
 
-    <section>
-        <h2>Capilano Computer Academic Journey</h2>
-        <p>Let me share some of the computer courses I've completed at Capilano University:</p>
-        <table border="1">
-            <caption>MY COMP COURSES</caption>
-            <thead>
-                <tr>
-                    <th>Course</th>
-                    <th>Name</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>COMP115</td>
-                    <td>Learn to Code</td>
-                </tr>
-                <tr>
-                    <td>COMP215</td>
-                    <td>Introduction to Computational Science</td>
-                </tr>
-                <tr>
-                    <td>COMP301</td>
-                    <td>Computing Technologies in a Digital Culture</td>
-                </tr>
-                <tr>
-                    <td>COMP120</td>
-                    <td>Computer Science for Engineers</td>
-                </tr>
-                <tr>
-                    <td>COMP165</td>
-                    <td>Introduction to Multimedia and the Internet</td>
-                </tr>
-                <tr>
-                    <td>STAT305</td>
-                    <td>Introduction to Big Data Analysis</td>
-                </tr>
-            </tbody>
-        </table>
+        <section id="projects" class="projects_section">
+            <h2 class = "projects_headings">
+                <span class="heading_title">PROJECTS</span>
+                <span class="heading_content">Explore some of the intriguing projects I've completed during my journey.</span>
+            </h2>
+            <div class="main-container">
+                
+                <div class="projects_content">
+                    <div class="project_row">
+                        <div class="project_row_img">
+                            <img src="project_img\project_sugarscape.jpg"
+                            alt="Screenshot"
+                            class="projects__row-img"
+                            loading="lazy"
+                        />
+                        </div>
+                        <div class="project_row_content">
+                            <h3 class="project_row_content_title">Sugarscape Model</h3>
+                            <p class ="project_row_content_para">
+                                This model is designed to study artificial societies and economic dynamics, particularly focusing on wealth distribution and inequality tendencies.
+                            </p>
+                            <a
+                                href="./project-Sugarscape.html"
+                                class="button_green"
+                                target="_blank"
+                                >Case Study</a
+                            >
+                        </div>
+                    </div>
+                    <div class="project_row">
+                        <div class="project_row_img">
+                            <img src="project_img\project_grazing.jpg"
+                            alt="Screenshot"
+                            class="projects__row-img"
+                            loading="lazy"
+                        />
+                        </div>
+                        <div class="project_row_content">
+                            <h3 class="project_row_content_title">Grazing Model</h3>
+                            <p class ="project_row_content_para">
+                                This computational framework specifically targets the simulation of grazing systems in a 2D Cellular Automata context, providing insights into the dynamics of ecosystem interactions.
+                            </p>
+                            <a
+                                href="./project-Grazing.html"
+                                class="button_green"
+                                target="_blank"
+                                >Case Study</a
+                            >
+                        </div>
+                    </div>
+                    <div class="project_row">
+                        <div class="project_row_img">
+                            <img src="project_img/project_natural.jpg"
+                            alt="Screenshot"
+                            class="projects__row-img"
+                            loading="lazy"
+                        />
+                        </div>
+                        <div class="project_row_content">
+                            <h3 class="project_row_content_title">Natural Disturbance Model</h3>
+                            <p class ="project_row_content_para">
+                                The forest fire model, inspired by the 1990 proposal by Bak, Chen, and Tang, employs an abstract cellular automaton framework to simulate the dynamics of forest fires.
+                            </p>
+                            <a
+                                href="./project-Natural_Disturbance.html"
+                                class="button_green"
+                                target="_blank"
+                                >Case Study</a
+                            >
+                        </div>
+                    </div>
+                    <div class="project_row">
+                        <div class="project_row_img">
+                            <img src="project_img\project_drug_realted_deaths.jpg"
+                            alt="Screenshot"
+                            class="projects__row-img"
+                            loading="lazy"
+                        />
+                        </div>
+                        <div class="project_row_content">
+                            <h3 class="project_row_content_title">Drug-Related Deaths Analysis</h3>
+                            <p class ="project_row_content_para">
+                                This project utilizes coding techniques to analyze a dataset spanning from 1990 to 2019, focusing on deaths attributed to drug disorders across various countries
+                            </p>
+                            <a
+                                href="./project-Drug_Realted_Deaths.html"
+                                class="button_green"
+                                target="_blank"
+                                >Case Study</a
+                            >
+                        </div>
+                    </div>
+                    <div class="project_row">
+                        <div class="project_row_img">
+                            <img src="project_img/project_patrolling_robot.jpg"
+                            alt="Screenshot"
+                            class="projects__row-img"
+                            loading="lazy"
+                        />
+                        </div>
+                        <div class="project_row_content">
+                            <h3 class="project_row_content_title">Patrolling Robot</h3>
+                            <p class ="project_row_content_para">
+                                This project involves the transformation of a Sparki robot into an autonomous patrolling unit, showcasing the practical application of patrolling robots in real-world scenarios.
+                            </p>
+                            <a
+                                href="./project-Patrolling_Robot.html"
+                                class="button_green"
+                                target="_blank"
+                                >Case Study</a
+                            >
+                        </div>
+                    </div>
+                    <div class="project_row">
+                        <div class="project_row_img">
+                            <img src="project_img/project-Tic-Tac-Toe.jpg"
+                            alt="Screenshot"
+                            class="projects__row-img"
+                            loading="lazy"
+                        />
+                        </div>
+                        <div class="project_row_content">
+                            <h3 class="project_row_content_title">AI Tic-Tac-Toe</h3>
+                            <p class ="project_row_content_para">
+                                The Tic-Tac-Toe project is a console-based game implemented in C that includes a basic artificial intelligence (AI) component.
+                            </p>
+                            <a
+                                href="./project-Tic-Tac_Toe.html"
+                                class="button_green"
+                                target="_blank"
+                                >Case Study</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <p>You can explore projects from these courses on my <a href="https://github.com/avipreet21">GitHub</a> profile. I'm enthusiastic about the possibility of more exciting computer courses in the future.</p>
-    </section>
+        <section id = "contact" class="contact_pad">
+            <div class="main_container">
+                <h2 class="contact_heading">
+                    <span class="heading_title">Contact</span>
+                    <span class="heading_content">Feel free to Contact me by submitting the form below and I will get back to you as soon as possible</span>
+                </h2>
+                <div class="contact__form-container">
+                    <form action="#" class="contact__form">
+                    <div class="contact__form-field">
+                        <label class="contact__form-label" for="name">Name</label>
+                        <input
+                        required
+                        placeholder="Enter Your Name"
+                        type="text"
+                        class="contact__form-input"
+                        name="name"
+                        id="name"
+                        />
+                    </div>
+                    <div class="contact__form-field">
+                        <label class="contact__form-label" for="email">Email</label>
+                        <input
+                        required
+                        placeholder="Enter Your Email"
+                        type="text"
+                        class="contact__form-input"
+                        name="email"
+                        id="email"
+                        />
+                    </div>
+                    <div class="contact__form-field">
+                        <label class="contact__form-label" for="message">Message</label>
+                        <textarea
+                        required
+                        cols="30"
+                        rows="10"
+                        class="contact__form-input"
+                        placeholder="Enter Your Message"
+                        name="message"
+                        id="message"
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="button_green" id="contact_form_button">
+                        Submit
+                    </button>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </section>
 
-    <footer>
-        <h2>Another Webpage for <a href="fun.html">Fun</a></h2>
-    </footer>
+        <footer class="main_footer">
+        <div class="main-container">
+                <div class="main_footer_row-1">
+                    <h2 class="heading_main_footer_row-1">
+                        <span>SOCIALS</span>
+                    </h2>
+                    <div class="main_footer_row-1_cont">
+                        <a target="_blank" rel="noreferrer" href="https://www.instagram.com/avipreet_21">
+                            <img
+                            class="main-footer__icon"
+                            src="icons\insta-ico.png"
+                            alt="icon"
+                            />
+                        </a>
+                        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/avipreet-singh-1a0a5a286/">
+                            <img
+                            class="main-footer__icon"
+                            src="icons\linkedin-ico.png"
+                            alt="icon"
+                            />
+                        </a>
+                        <a target="_blank" rel="noreferrer" href="https://github.com/avipreet21">
+                            <img
+                            class="main-footer__icon"
+                            src="icons\github-ico.png"
+                            alt="icon"
+                            />
+                        </a>
+                        <a target="_blank" rel="noreferrer" href="https://techup01.wordpress.com/">
+                            <img
+                            class="main-footer__icon_wordpress"
+                            src="icons\social.png"
+                            alt="icon"
+                            />
+                        </a>
+                    </div>
+                </div>
+                <div class="main_footer_row-2">
+                    <h4 class="heading_main_footer_row-2">
+                        AVIPREET SINGH
+                    </h4>
+                    <p class="main_footer_row-2_cont">
+                        A coding enthusiast dedicated to daily learning, aiming to make a positive impact through continuous improvement.
+                    </p>
+                </div>
+        </div>
+        </footer>
 
-</body>
+    </body>
 
 </html>
