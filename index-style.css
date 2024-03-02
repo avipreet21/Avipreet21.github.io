@@ -73,7 +73,7 @@ textarea {
     flex-wrap: wrap; /* Allow items to wrap on small screens */
 }@media only screen and (max-width: 600px) {
     .header {
-        height: 40px; /* Reduce height for smaller screens */
+        height: 45px; /* Reduce height for smaller screens */
     }
 }
 
@@ -129,7 +129,7 @@ textarea {
     
     .header_logo_img_sub,
     .header_link {
-        font-size: 10px;
+        font-size: 12px;
     }
 }
 
@@ -169,7 +169,7 @@ textarea {
         font-size: 45px; /* Font size */
       }@media only screen and (max-width: 37.5em){
         .annoucing_name{
-            font-size: 35px;
+            font-size: 40px;
             align-items: center;
         }
       }
