@@ -103,7 +103,6 @@ textarea {
 .main_menu_links {
     list-style: none;
     display: flex;
-    margin-top: 10px; /* Add margin to separate menu from logo */
 }
 
 .main_menu_link-wrapper {
