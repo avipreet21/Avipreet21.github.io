@@ -34,7 +34,7 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   font-family: 'Source Sans Pro', sans-serif;
-  padding-top: 70px;
+  padding-top: 40px;
 }
 a {
     text-decoration: none;
@@ -69,7 +69,7 @@ textarea {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 500;
     flex-wrap: wrap; /* Allow items to wrap on small screens */
 }@media only screen and (max-width: 600px) {
     .header {
@@ -118,8 +118,8 @@ textarea {
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
-}
 
+}
 /* Media query for smaller screens */
 @media only screen and (max-width: 600px) {
     .header_logo_img {
@@ -144,7 +144,8 @@ textarea {
   @media only screen and (max-width: 37.5em) {
     .Introduction {
       height: unset;
-      min-height: unset; } }
+      min-height: unset;
+ } }
 
 .Introduction_content {
     position: absolute;
