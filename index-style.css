@@ -111,7 +111,11 @@ textarea {
 
 .main_menu_link-wrapper {
     margin-right: 20px;
-}
+}@media only screen and (max-width: 37.5em){
+    .main_menu_link-wrapper{
+        margin-right: 10px;
+    }
+  }
 
 .header_link {
     color: #000000;
