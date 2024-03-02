@@ -71,6 +71,10 @@ textarea {
     right: 0;
     z-index: 1000;
     flex-wrap: wrap; /* Allow items to wrap on small screens */
+}@media only screen and (max-width: 600px) {
+    .header {
+        height: 40px; /* Reduce height for smaller screens */
+    }
 }
 
 .header_logo {
