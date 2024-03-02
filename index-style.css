@@ -65,30 +65,32 @@ textarea {
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
-    position: fixed; /* Fix the header in place */
-    top: 0; /* Place the header at the top */
-    left: 0; /* Align the header to the left */
-    right: 0; /* Align the header to the right */
-    z-index: 1000; /* Ensure the header is above other content */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    flex-wrap: wrap; /* Allow items to wrap on small screens */
 }
 
 .header_logo {
-    display: flex; /* Use flexbox to align items */
-    align-items: center; /* Center items vertically */
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevent logo from shrinking */
 }
 
 .header_logo_img {
-    width: 50px; /* Adjust the width and height as needed for your small icon */
+    width: 50px;
     height: 50px;
-    border-radius: 50%; /* Makes the image round */
-    overflow: hidden; /* Ensures the image stays within the rounded border */
-    margin-right: 10px; /* Add margin between the image and text */
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
 }
 
 .header_logo_img img {
-    width: 100%; /* Ensures the image fills the round container */
-    height: 100%; /* Ensures the image fills the round container */
-    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .header_logo_img_sub {
@@ -97,14 +99,11 @@ textarea {
     font-weight: bold;
     font-size: 17px;
 }
-.header_logo_img_sub:hover{
-    color: rgba(0, 98, 185, 0.8);
-}
-
 
 .main_menu_links {
     list-style: none;
     display: flex;
+    margin-top: 10px; /* Add margin to separate menu from logo */
 }
 
 .main_menu_link-wrapper {
@@ -117,9 +116,20 @@ textarea {
     font-weight: bold;
     font-size: 18px;
 }
-.header_link:hover{
-    color: rgba(0, 98, 185, 0.8);
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+    .header_logo_img {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .header_logo_img_sub,
+    .header_link {
+        font-size: 10px;
+    }
 }
+
 /* Introduction section styles */
 .Introduction{color: #fff;
   background: linear-gradient(to right, rgba(0, 98, 185, 0.8), rgba(160, 162, 165, 0.8)), url(BACK/design.svg);
@@ -153,13 +163,23 @@ textarea {
         margin: 3rem auto 0 auto; /* Margin settings */
         max-width: 80rem; /* Maximum width */
         font-size: 45px; /* Font size */
+      }@media only screen and (max-width: 37.5em){
+        .annoucing_name{
+            font-size: 35px;
+            align-items: center;
+        }
       }
           
       .first-impression {
         margin-top: 5rem; /* Top margin */
         text-align: center; /* Center text */
         font-size: 30px; /* Font size */
+      }@media only screen and (max-width: 37.5em){
+        .first-impression{
+            font-size: 25px;
+        }
       }
+    
       .button_green {
         display: inline-block; /* Make the button inline-block */
         padding: 10px 20px; /* Padding */
@@ -606,3 +626,4 @@ textarea {
     font-weight: 600;
     color: #777;
 }
+
