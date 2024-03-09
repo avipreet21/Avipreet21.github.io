@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS variable and function</title>
+        <script>
+            function averaging() {
+                let num1 = document.querySelector('#first_val').value;
+                let num2 = document.querySelector('#second_val').value;
+                
+                if (!isNaN(num1) && !isNaN(num2)) { // Check if both inputs are valid string of numbers
+                    let average = (parseFloat(num1) + parseFloat(num2)) / 2;
+                    average = average.toFixed(2); // Limit average to two decimal places
+                    document.querySelector('#average').textContent = average;
+                } else {
+                    document.querySelector('#average').textContent = "Invalid input";
+                }
+            }
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelector('#first_val').onkeyup = averaging;
+                document.querySelector('#second_val').onkeyup = averaging;
+            });            
+        </script>
+    </head>
+    <body>
+        <p>We love math! Let's calculate the average.</p>
+        <label>Your first number: </label>
+        <input type="text" id="first_val" value="0"/>
+        <br>
+        <label>Your second number: </label>
+        <input type="text" id="second_val" value="0"/>
+
+        <br>
+        <button id="result">Average:</button>
+        <span id="average">0</span> 
+    </body>
+</html>

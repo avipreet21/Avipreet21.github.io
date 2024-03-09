@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Real-time Chat Application</title>
+    <script type="module">
+        const databaseUrl = 'https://learning-datbase-default-rtdb.firebaseio.com/Achat.json';
+        // Call the displayMessages function when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('button').onclick = sendMessage;
+            displayAllMessages();
+        });
+        async function sendMessage() {
+            const usernameInput = document.querySelector('#username');
+            const messageInput = document.querySelector('#message');
+            const categoryInput = document.querySelector('#selectcategory');
+
+            const username = usernameInput.value;
+            const message = messageInput.value;
+            const category = categoryInput.value;
+
+            if (username || message) {
+                const timestamp = new Date();
+                const data = { category, username, message, timestamp };
+            
+                    try {
+                        const response = await fetch(databaseUrl, {
+                            method: 'POST',
+                            headers: {
+                            'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        });
+
+                        if (!response.ok) {
+                            throw new Error('Failed to send message');
+                        }
+                        messageInput.value = '';
+                        usernameInput.value = '';
+                        categoryInput.value = '';
+                    } catch (error) {
+                        console.error('Error sending message:', error);
+                    }
+                }
+            }
+
+        async function displayAllMessages() {
+            try {
+                const response = await fetch(databaseUrl);
+                const data = await response.json();
+                const dataContainer = document.querySelector('#messages');
+                dataContainer.innerHTML = "<h2>Messages</h2>";
+                for (const postId in data) {
+                    const post = data[postId];
+                    const timestamp = post.timestamp; // console.log(typeof(timestamp)); string
+                    const time = new Date(timestamp).toLocaleString("en-US", {timeZone: "America/Vancouver"});
+                    dataContainer.innerHTML += `
+                    <p>${post.category}</p>
+                    <p>${time}</p>
+                        <p><u><strong></strong> ${post.username}</u>:
+                            <strong></strong> ${post.message}</p><br>
+                    `;
+                } 
+                
+                // Subscribe to real-time updates
+                const databaseRef = new EventSource(databaseUrl);
+                databaseRef.addEventListener('put', async (event) => {
+                    try {
+                        const newData = JSON.parse(event.data);
+                        const messageData = newData.data;
+                        const time = new Date(messageData.timestamp).toLocaleString("en-US", {timeZone: "America/Vancouver"});
+                        if ((messageData.username || messageData.message)&& messageData.category==="Priority") { // Check if data is valid
+                            dataContainer.innerHTML += `
+                            <p>${messageData.category}</p>
+                            <p>${time}</p>
+                            <p><u><strong></strong>${messageData.username}</u>:
+                                    <strong></strong>${messageData.message}</p><br>
+                            `;
+                        }else{
+                            dataContainer.innerHTML += `
+                            <p>${messageData.category}</p>
+                            <p>${time}</p>
+                            <p><u><strong></strong>${messageData.username}</u>:
+                                    <strong></strong>${messageData.message}</p><br>
+                            `;
+                        }
+                    } catch (error) {
+                        console.error('Error handling real-time update:', error);
+                    }
+                });
+            } catch (error) {
+                throw new Error('Error fetching data:', error);
+            }
+        }
+    </script>
+</head>
+<body>
+        <h1>Real-time Chat Application</h1>
+        <div>
+            <input type="text" id="username" placeholder="Enter your username">
+            <input type="text" id="message" placeholder="Enter your message">
+            <select name= "category" id="selectcategory">
+                <option value="">General</option>
+                <option value="Priority">Priority</option>
+            </select>
+            <button>Send</button>
+        </div>
+        <p id="messages"></p>
+</body>
+</html>

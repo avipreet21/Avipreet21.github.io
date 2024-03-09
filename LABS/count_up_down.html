@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>count up and down</title>
+    </head>
+
+        <body>
+            <h3> we love counting!</h3>
+            <button onclick = "counter('count_up');">count up</button>
+            <button onclick = "counter('count_down');">count down</button>
+            <script type = "text/javascript">
+                let count = 0;
+                let audio = new Audio('Ghora.mp3');
+                counter = function(action){
+                    if(action === 'count_up'){
+                        count +=1;
+                    }else if (action === 'count_down'){
+                        count -=1;
+                    }
+                    
+                    alert('count=' + count);
+
+                    if(count%5 === 0){
+                        audio.play();
+                    }else if (count %5 !== 0){
+                        audio.pause();
+                    }
+                }
+            </script>
+        </body>
+</html>
