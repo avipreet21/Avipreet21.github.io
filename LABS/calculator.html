@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <script src="calculatorFuncionary.js" defer></script>
+</head>
+<body>
+    <h2>Scientific Calculator</h2>
+
+    <label for="math">Math:</label>
+    <input id="calcInput" type="text">
+    <br><br>
+
+    <div id="buttons">
+        <!-- Operator buttons -->
+        <button data-operation="add" data-value="+">+</button>
+        <button data-operation="subtract" data-value="-">-</button>
+        <button data-operation="multiply" data-value="*">*</button>
+        <button data-operation="divide" data-value="/">/</button>
+        <button data-operation="left" data-value="(">(</button>
+        <button data-operation="right" data-value=")">)</button>
+        <button data-operation="decimal" data-value=".">.</button>
+
+        <br><br>
+
+        <!-- Number buttons -->
+        <button data-operation="num" data-value="1">1</button>
+        <button data-operation="num" data-value="2">2</button>
+        <button data-operation="num" data-value="3">3</button>
+        <button data-operation="num" data-value="4">4</button>
+        <button data-operation="num" data-value="5">5</button>
+
+        <br><br>
+
+        <button data-operation="num" data-value="6">6</button>
+        <button data-operation="num" data-value="7">7</button>
+        <button data-operation="num" data-value="8">8</button>
+        <button data-operation="num" data-value="9">9</button>
+        <button data-operation="num" data-value="0">0</button>
+
+        <br><br>
+
+        <!-- Other buttons -->
+        <button data-operation="delete">delete</button>
+        <button data-operation="clear">clear</button>
+        <button data-operation="evaluate">=</button>
+
+        <br><br>
+        <p>Expression is <span id="expre"></span></p>
+        <br><br>
+        <p>Result is <span id="result"></span></p>
+    </div>
+</body>
+</html>
