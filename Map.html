@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaflet + Raster Map tiles</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.3.4/leaflet-routing-machine.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.3.4/leaflet-routing-machine.min.css" />
+  <style>
+    html,
+    body,
+    #my-map {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="my-map"></div>
+  <script>
+    var map = L.map("my-map").setView([49.1387263, -122.8483899], 15);
+
+    // Get your own API Key on https://myprojects.geoapify.com
+    var myAPIKey = "d72c2df924ec46a7a3137b290da06e0a";
+
+    // Retina displays require different map tiles quality
+    var isRetina = L.Browser.retina;
+
+    var baseUrl =
+      "https://maps.geoapify.com/v1/tile/osm-bright/{z}/{x}/{y}.png?apiKey={apiKey}";
+    var retinaUrl =
+      "https://maps.geoapify.com/v1/tile/osm-bright/{z}/{x}/{y}@2x.png?apiKey={apiKey}";
+
+    // Add map tiles layer. Set 20 as the maximal zoom and provide map data attribution.
+    L.tileLayer(isRetina ? retinaUrl : baseUrl, {
+      attribution:
+        'Powered by <a href="https://www.geoapify.com/" target="_blank">Geoapify</a> | © OpenStreetMap <a href="https://www.openstreetmap.org/copyright" target="_blank">contributors</a>',
+      apiKey: myAPIKey,
+      maxZoom: 20,
+      id: "osm-bright",
+    }).addTo(map);
+
+    // Add routing control
+    var control = L.Routing.control({
+      waypoints: [
+        L.latLng(49.1387263, -122.8483899), // Starting point coordinates
+        L.latLng(49.160528518085414, -122.79345904903687), // End point coordinates
+      ],
+      router: L.Routing.geoapify(myAPIKey), // Use the Geoapify router with your API key
+    }).addTo(map);
+    var marker = L.marker([49.1387263, -122.8483899]).addTo(map);
+    marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+
+    // Ensure that routing control is rendered correctly
+    map.on("routingstart", function() {
+      map.removeLayer(control);
+      control.addTo(map);
+    });
+  </script>
+</body>
+</html>
